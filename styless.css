@@ -1,0 +1,44 @@
+
+.head{
+    background-color: rgb(107, 202, 236);
+    text-align: center;
+}
+h2{
+    padding-bottom: 5px;
+}
+.customcolor{
+    background-color: rgb(113, 112, 112);
+    
+}
+.cc{
+    color: rgb(255, 255, 255);
+    
+}
+
+.split-container {
+    display: grid;
+    grid-template-columns: 5fr 1fr; 
+}
+
+
+.left-section, .right-section {
+    padding: 20px; 
+    border: 1px solid #ffffff; 
+}
+
+.left-section {
+    background-color: rgb(255, 254, 254); 
+}
+
+.right-section {
+    background-color: rgb(85, 84, 84); 
+}
+p{
+    text-align: center;
+}
+.nav-item{
+    padding-left: 10px;
+    padding-right: 10px;
+    float: left;
+}
+

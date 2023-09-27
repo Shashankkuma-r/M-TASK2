@@ -1,0 +1,66 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <title>JS-Task-7 (SHASHANK)</title>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    #train {
+      position: relative;
+      cursor: pointer;
+    }
+
+    input[type="button"] {
+      margin: 10px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <img id="train" src="https://js.cx/clipart/train.gif">
+  <p>Click the following button to handle animation.</p>
+  <input type="button" value="Start" onclick="startAnimation();" />
+  <input type="button" value="Stop" onclick="stopAnimation();" />
+
+  <script>
+    let animationTimer; // Variable to store the timer ID
+    let isAnimating = false; // Flag to track animation state
+
+    function startAnimation() {
+      if (!isAnimating) { // Check if animation is not already running
+        let start = Date.now();
+        let train = document.getElementById("train");
+        isAnimating = true; // Set the flag to true
+
+        animationTimer = setInterval(function() {
+          let timePassed = Date.now() - start;
+          train.style.left = timePassed / 5 + 'px';
+
+          if (timePassed > 2000) {
+            clearInterval(animationTimer);
+            isAnimating = false; // Reset the flag when animation stops
+          }
+        }, 20);
+      }
+    }
+
+    function stopAnimation() {
+      if (isAnimating) { // Check if animation is currently running
+        clearInterval(animationTimer);
+        isAnimating = false; // Reset the flag
+      }
+    }
+
+  </script>
+</body>
+
+</html>
